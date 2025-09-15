@@ -555,7 +555,7 @@ function renderGroup(projectNumber, groupNumber) {
     const galleryHeader = el('div', { className: 'gallery-header' });
     const galleryTitle = el('h1', { 
         className: 'gallery-title', 
-        textContent: projectNumber === '1' ? 'My Self Introduction Page' : 'Hunsen Sereypheap High School Page'
+        textContent: projectNumber === '1' ? 'My Self Introduction Page' : 'Hun Sen Serey Pheap High School Page'
     });
     const gallerySubtitle = el('p', { 
         className: 'gallery-subtitle', 
