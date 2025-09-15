@@ -147,10 +147,11 @@ body {
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
     z-index: 100;
+    position: relative;
 }
 
 .expandable-menu.show {
-    max-height: 300px;
+    max-height: 500px;
 }
 
 .menu-content {
@@ -160,6 +161,14 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .menu-content {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
 }
 
 .menu-section {
@@ -689,11 +698,11 @@ body {
     }
     
     .school-name {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .crew-text {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     
     .partner-logo {
@@ -1003,6 +1012,30 @@ body {
         --text: #000000;
         --muted: #333333;
         --border: #000000;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .school-name {
+        font-size: 0.8rem;
+    }
+    
+    .crew-text {
+        font-size: 0.8rem;
+    }
+    
+    .header-right {
+        gap: 0.5rem;
+    }
+    
+    .menu-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .expandable-menu.show {
+        max-height: 600px;
     }
 }
 
