@@ -642,7 +642,7 @@ body {
 }
 
 .footer-logo[src*="코익스"] {
-    height: 55px; /* 10% larger than 50px */
+    height: 63px; /* 15% larger than 55px */
 }
 
 /* Responsive Design */
@@ -1005,3 +1005,4 @@ body {
         --border: #000000;
     }
 }
+
