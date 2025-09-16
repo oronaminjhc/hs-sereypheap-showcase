@@ -531,70 +531,93 @@ function renderProject(projectNumber) {
     app.appendChild(groupCards);
 }
 
-function renderGroup(project, group){
-  const app = document.querySelector('#app');
-  const section = el('section',{class:'section'});
-
-  // Support both old/new router helpers
-  const parsed = typeof parseHash === 'function' ? parseHash() : { params: new URLSearchParams() };
-  const params = parsed.params || new URLSearchParams();
-  const initial = params.get('search') || '';
-
-  const data = (project===1 ? Data.project1 : Data.project2)[`group${group}`];
-
-  // Dynamic title per project
-  const titleMap = {
-    1: 'My Self Introduction Page',
-    2: 'Hun Sen Serey Pheap High School Page'
-  };
-  const headerTitle = titleMap[project] || `Project ${project}`;
-
-  // Header: breadcrumb + dynamic title + sub (group info)
-  section.append(
-    breadcrumb([['#','Home'], [`#/project${project}`, `Project ${project}`], [null, `Group ${group}`]]),
-    el('h2',{}, headerTitle),
-    el('p',{class:'sub'}, `Group ${group} • Click an available result to open in a new tab.`)
-  );
-
-  // Search UI
-  const total = data.length;
-  const count = el('span',{class:'search-count', 'aria-live':'polite'});
-  const input = el('input',{
-    class:'search-input',
-    type:'search',
-    placeholder:'Search student name…',
-    value: initial,
-    'aria-label':'Search students by name',
-    oninput: (e)=>{
-      const term = e.target.value;
-      const visible = renderStudents(grid, data, term);
-      count.textContent = `${visible}/${total}`;
-      if (typeof setHashParam === 'function') setHashParam('search', term);
+function renderGroup(projectNumber, groupNumber) {
+    console.log('Rendering group:', projectNumber, groupNumber);
+    
+    const app = document.getElementById('app');
+    
+    // Add background slideshow
+    addPageBackground();
+    
+    // Breadcrumb
+    const breadcrumbEl = breadcrumb([
+        { text: 'Home', url: '#' },
+        { text: `Project ${projectNumber}`, url: `#/project${projectNumber}` },
+        { text: `Group ${groupNumber}` }
+    ]);
+    app.appendChild(breadcrumbEl);
+    
+    // Gallery container
+    const gallery = el('div', { className: 'student-gallery' });
+    
+    // Gallery header
+    const galleryHeader = el('div', { className: 'gallery-header' });
+    const galleryTitle = el('h1', { 
+        className: 'gallery-title', 
+        textContent: projectNumber === 1 ? 'My Self Introduction Page' : 'Hun Sen Serey Pheap High School Page'
+    });
+    const gallerySubtitle = el('p', { 
+        className: 'gallery-subtitle', 
+        textContent: 'Click on a student card to view their project' 
+    });
+    
+    galleryHeader.appendChild(galleryTitle);
+    galleryHeader.appendChild(gallerySubtitle);
+    
+    // Search functionality
+    const studentsData = Data[`project${projectNumber}`][`group${groupNumber}`];
+    console.log('Students data:', studentsData);
+    
+    let filteredStudents = studentsData;
+    const searchInput = createSearchInput((searchTerm) => {
+        filteredStudents = studentsData.filter(student =>
+            student.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        renderStudentGrid();
+    });
+    
+    // Student grid container
+    const studentGridContainer = el('div', { className: 'student-grid', id: 'studentGrid' });
+    
+    function renderStudentGrid() {
+        studentGridContainer.innerHTML = '';
+        
+        filteredStudents.forEach(student => {
+            const studentCard = el('div', { 
+                className: 'student-card',
+                onclick: () => {
+                    if (student.url) {
+                        createModal(student);
+                    } else {
+                        createComingSoonModal(student.name);
+                    }
+                }
+            });
+            
+            const studentName = el('h3', {
+                className: 'student-name',
+                textContent: student.name
+            });
+            
+            const studentDescription = el('p', {
+                className: 'student-description',
+                textContent: student.url ? 'Click to visit my page' : 'Project coming soon'
+            });
+            
+            studentCard.appendChild(studentName);
+            studentCard.appendChild(studentDescription);
+            
+            studentGridContainer.appendChild(studentCard);
+        });
     }
-  });
-  const searchbar = el('div',{class:'searchbar'}, [input, count]);
-  section.append(searchbar);
-
-  // Grid
-  const grid = el('div',{class:'grid'});
-  const visible0 = renderStudents(grid, data, initial);
-  count.textContent = `${visible0}/${total}`;
-
-  section.append(grid);
-  app.append(section);
-
-  // Keyboard UX: "/" focuses search, "Esc" clears
-  window.addEventListener('keydown', (e)=>{
-    const tag = document.activeElement?.tagName?.toLowerCase();
-    if (e.key === '/' && tag !== 'input' && tag !== 'textarea'){
-      e.preventDefault(); input.focus();
-    } else if (e.key === 'Escape' && document.activeElement === input){
-      input.value = '';
-      const v = renderStudents(grid, data, '');
-      count.textContent = `${v}/${total}`;
-      if (typeof setHashParam === 'function') setHashParam('search','');
-    }
-  }, { once:false });
+    
+    // Initial render
+    renderStudentGrid();
+    
+    gallery.appendChild(galleryHeader);
+    gallery.appendChild(searchInput);
+    gallery.appendChild(studentGridContainer);
+    app.appendChild(gallery);
 }
 
 // Keyboard navigation support
