@@ -340,20 +340,43 @@ function createGroupModal(groupName, groupData) {
     membersSection.appendChild(membersTitle);
     membersSection.appendChild(membersList);
     
-    // Project iframe section
+    // Project section
     const projectSection = el('div', { className: 'group-project-section' });
     const projectTitle = el('h3', { 
         className: 'group-project-title',
         textContent: 'Group Project'
     });
-    const projectIframe = el('iframe', {
-        className: 'modal-iframe',
-        src: groupData.url,
-        title: `${groupName} Project`
-    });
     
-    projectSection.appendChild(projectTitle);
-    projectSection.appendChild(projectIframe);
+    if (groupData.url) {
+        const projectIframe = el('iframe', {
+            className: 'modal-iframe',
+            src: groupData.url,
+            title: `${groupName} Project`
+        });
+        projectSection.appendChild(projectTitle);
+        projectSection.appendChild(projectIframe);
+    } else {
+        const comingSoonContent = el('div', { className: 'coming-soon-content' });
+        const comingSoonIcon = el('div', { 
+            className: 'coming-soon-icon',
+            textContent: '🚧'
+        });
+        const comingSoonTitle = el('h3', { 
+            className: 'coming-soon-title',
+            textContent: 'Coming Soon'
+        });
+        const comingSoonMessage = el('p', { 
+            className: 'coming-soon-message',
+            textContent: `${groupName}'s project is currently under development. Please check back later!`
+        });
+        
+        comingSoonContent.appendChild(comingSoonIcon);
+        comingSoonContent.appendChild(comingSoonTitle);
+        comingSoonContent.appendChild(comingSoonMessage);
+        
+        projectSection.appendChild(projectTitle);
+        projectSection.appendChild(comingSoonContent);
+    }
     
     modalContent.appendChild(membersSection);
     modalContent.appendChild(projectSection);
@@ -637,8 +660,8 @@ function renderGroup(projectNumber, groupNumber) {
     galleryHeader.appendChild(galleryTitle);
     galleryHeader.appendChild(gallerySubtitle);
     
-    // Check if this is Project 2 Group 1 (group-based structure)
-    if (projectNumber === 2 && groupNumber === 1) {
+    // Check if this is Project 2 (group-based structure)
+    if (projectNumber === 2) {
         const groupsData = Data[`project${projectNumber}`][`group${groupNumber}`];
         console.log('Groups data:', groupsData);
         

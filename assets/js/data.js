@@ -88,32 +88,31 @@ const Data = {
                 students: ["THEA LYMEAN", "SORN SIMHONG", "THORN THOEUNDALIYA", "THIV ZOLY", "LY KIMSRUN"]
             }
         },
-        group2: [
-            { name: "SIM TEVENTH" },
-            { name: "SETHVIN SONISA" },
-            { name: "RUN KESARKOLE" },
-            { name: "KOSAL MENGHONG" },
-            { name: "KONG THEARAYUK" },
-            { name: "CHAN SOKCHAN" },
-            { name: "CHEA FRANKLAMPHAT" },
-            { name: "CHEAV SIVHOUTH" },
-            { name: "CHIM PANHVUTH" },
-            { name: "MEY MEASOUDOM" },
-            { name: "YA KHEMRIN" },
-            { name: "RITHY MONYNEATH" },
-            { name: "VEASNA LITA" },
-            { name: "SATH SEREYMORAKATH" },
-            { name: "SOM SREYMEY" },
-            { name: "SAMAUN CHARIVATH" },
-            { name: "THAT RIYO" },
-            { name: "THONG SOKHEANG" },
-            { name: "CHAN SOVANNMONY" },
-            { name: "MAO MONYRATANAK" },
-            { name: "OEUN VIRAK" },
-            { name: "UCH SEREYDAVID" },
-            { name: "ORN VINLIK" },
-            { name: "LIM PHEALYKANNIKA" },
-            { name: "ANJULYTA VANNSAK" }
-        ]
+        group2: {
+            "IT ENTHUSIASTS": {
+                url: null,
+                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
+            },
+            "VIRTUAL LEARNERS": {
+                url: null,
+                students: ["ANJULYTA VANNSAK", "CHEA FRANKLAMPHAT", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
+            },
+            "DREAM CHASERS": {
+                url: null,
+                students: ["THONG SOKHEANG", "SATH SEREYMORAKATH", "CHAN SOKCHAN"]
+            },
+            "SECRETIVE PLOTTER": {
+                url: null,
+                students: ["SAMAUN CHARIVATH", "KONG THEARAYUK", "ORN VINLIK"]
+            },
+            "THE EQUALITY": {
+                url: null,
+                students: ["LIM PHEALYKANNIKA", "SOM SREYMEY", "OEUN VIRAK", "CHIM PANHVUTH"]
+            },
+            "BABYMONSTER": {
+                url: null,
+                students: ["CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA", "UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
+            }
+        }
     }
 };
