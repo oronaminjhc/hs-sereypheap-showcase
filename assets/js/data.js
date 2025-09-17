@@ -27,7 +27,8 @@ const Data = {
             { name: "LY KIMSRUN", url: "https://jqh4dm.csb.app/" },
             { name: "SOUR SOMBRATHNA", url: "https://nk2v28.csb.app/" },
             { name: "ABDUL ROZANA", url: "https://c5qhsd.csb.app/" },
-            { name: "HENG SOKKONG", url: "https://9vyq48.csb.app/" }
+            { name: "HENG SOKKONG", url: "https://9vyq48.csb.app/" },
+            { name: "SREY SOVANRATANY", url: "https://nk2v28.csb.app/" }
         ],
         group2: [
             { name: "CHEA FRANKLAMPHAT", url: "https://lf8rkp.csb.app/" },
