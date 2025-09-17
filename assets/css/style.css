@@ -443,6 +443,12 @@ body {
     transition: all 0.4s ease;
     cursor: pointer;
     text-align: center;
+    width: 280px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .group-card-inner:hover {
