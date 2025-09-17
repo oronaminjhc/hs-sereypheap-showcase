@@ -61,11 +61,11 @@ const Data = {
         group1: {
             "THE SMART LITTLE TWILIGHT": {
                 url: "https://grhwmv.csb.app/",
-                students: ["SAMBATH NYVATHANAK", "DAM PICHPANHA", "SIM CHERMENG"]
+                students: ["THORN THOEUNDALIYA", "THEA LYMEAN", "SORN SIMHONG", "LY KIMSRUN"]
             },
             "DARK VIBE": {
                 url: "https://3pml7d.csb.app/",
-                students: ["BIN PISALSAK", "MA SOPHEAANIKA", "CHEA SOKHOUR", "RITH RATANAK", "CHHOR HEANG NY"]
+                students: ["MA SOPHEAANIKA", "CHEA SOKHOUR", "RITH RATANAK", "CHHOR HEANG NY"]
             },
             "WATERMELON": {
                 url: "https://ts3h2m.csb.app/",
@@ -77,7 +77,7 @@ const Data = {
             },
             "PLAVE WIZARDS": {
                 url: "https://wz2gpj.csb.app/",
-                students: ["KHA MEY EI", "CHEA ALIYA"]
+                students: ["CHEA ALIYA", "SAMBATH NYVATHANAK", "DAM PICHPANHA", "SIM CHERMENG"]
             },
             "3GIRLS": {
                 url: "https://rfv8km.csb.app/",
@@ -85,17 +85,25 @@ const Data = {
             },
             "CHILL CREW": {
                 url: "https://2c2jyr.csb.app/",
-                students: ["THEA LYMEAN", "SORN SIMHONG", "THORN THOEUNDALIYA", "THIV ZOLY", "LY KIMSRUN"]
+                students: ["THIV ZOLY", "BIN PISALSAK", "KHA MEY EI"]
             }
         },
         group2: {
-            "IT ENTHUSIASTS": {
+            "WINNER": {
                 url: null,
-                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
+                students: ["ANJULYTA VANNSAK", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
             },
             "VIRTUAL LEARNERS": {
                 url: null,
-                students: ["ANJULYTA VANNSAK", "CHEA FRANKLAMPHAT", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
+                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
+            },
+            "BABYMONSTER": {
+                url: null,
+                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
+            },
+            "IT ENTHUSIASTS": {
+                url: null,
+                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
             },
             "DREAM CHASERS": {
                 url: null,
@@ -108,10 +116,6 @@ const Data = {
             "THE EQUALITY": {
                 url: null,
                 students: ["LIM PHEALYKANNIKA", "SOM SREYMEY", "OEUN VIRAK", "CHIM PANHVUTH"]
-            },
-            "BABYMONSTER": {
-                url: null,
-                students: ["CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA", "UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
             }
         }
     }
