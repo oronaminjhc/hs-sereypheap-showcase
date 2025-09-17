@@ -433,7 +433,7 @@ body {
     box-shadow: none !important;
 }
 
-/* 팀 카드 안쪽 요소들에만 hover 효과 적용 */
+/* 팀 카드 안쪽 요소들에만 hover 효과 적용 - 학생 카드와 동일한 디자인 */
 .group-card .student-name {
     background: #fff;
     color: var(--text);
@@ -441,6 +441,8 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
     margin-bottom: 0.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px var(--shadow);
 }
 
 .group-card .student-description {
@@ -449,6 +451,8 @@ body {
     padding: 0.8rem;
     border-radius: 8px;
     transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px var(--shadow);
 }
 
 .group-card:hover .student-name {
