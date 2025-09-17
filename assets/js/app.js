@@ -321,25 +321,6 @@ function createGroupModal(groupName, groupData) {
     
     const modalContent = el('div', { className: 'modal-content' });
     
-    // Group members section
-    const membersSection = el('div', { className: 'group-members-section' });
-    const membersTitle = el('h3', { 
-        className: 'group-members-title',
-        textContent: 'Group Members'
-    });
-    const membersList = el('div', { className: 'group-members-list' });
-    
-    groupData.students.forEach(studentName => {
-        const memberItem = el('div', { 
-            className: 'group-member-item',
-            textContent: studentName
-        });
-        membersList.appendChild(memberItem);
-    });
-    
-    membersSection.appendChild(membersTitle);
-    membersSection.appendChild(membersList);
-    
     // Project section
     const projectSection = el('div', { className: 'group-project-section' });
     const projectTitle = el('h3', { 
@@ -378,7 +359,6 @@ function createGroupModal(groupName, groupData) {
         projectSection.appendChild(comingSoonContent);
     }
     
-    modalContent.appendChild(membersSection);
     modalContent.appendChild(projectSection);
     modalContainer.appendChild(modalHeader);
     modalContainer.appendChild(modalContent);
@@ -681,9 +661,9 @@ function renderGroup(projectNumber, groupNumber) {
                 textContent: groupName
             });
             
-            const groupDescription = el('p', {
+            const groupDescription = el('div', {
                 className: 'student-description',
-                textContent: `Members: ${groupData.students.join(', ')}`
+                innerHTML: `Members:<br>${groupData.students.join('<br>')}`
             });
             
             groupCard.appendChild(groupNameEl);
