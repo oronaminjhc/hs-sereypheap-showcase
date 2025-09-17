@@ -434,16 +434,16 @@ body {
 }
 
 .group-card:hover {
-    background: transparent !important;
-    color: inherit !important;
+    background: linear-gradient(135deg, var(--school-green), var(--school-light-green)) !important;
+    color: #fff !important;
     transform: translateY(-6px) scale(1.03) !important;
-    box-shadow: none !important;
+    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.4) !important;
     animation: hover-wiggle 0.4s ease forwards !important;
 }
 
 .group-card:hover .student-name,
 .group-card:hover .student-description {
-    color: inherit !important;
+    color: #fff !important;
 }
 
 .group-button {
