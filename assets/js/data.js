@@ -58,32 +58,36 @@ const Data = {
         ]
     },
     project2: {
-        group1: [
-            { name: "SIM CHERMENG" },
-            { name: "DAM PICHPANHA" },
-            { name: "HOR HANNA" },
-            { name: "CHEA ALIYA" },
-            { name: "DOUNG SIVLORNG" },
-            { name: "MA SOPHEAANIKA" },
-            { name: "CHEA SOKHOUR" },
-            { name: "RITH RATANAK" },
-            { name: "CHIV MENGCHING" },
-            { name: "THEA LYMEAN" },
-            { name: "CHHOR HEANG NY" },
-            { name: "HAN SODAVIN" },
-            { name: "KHA MEY EI" },
-            { name: "THORN THOEUNDALIYA" },
-            { name: "SAMBATH NYVATHANAK" },
-            { name: "SORN SIMHONG" },
-            { name: "BIN PISALSAK" },
-            { name: "THIV ZOLY" },
-            { name: "LY KIMSRUN" },
-            { name: "SOUR SOMBRATHNA" },
-            { name: "ABDUL ROZANA" },
-            { name: "HENG SOKKONG" },
-            { name: "CHANG VOTEY" },
-            { name: "TOUCH THEARITH" }
-        ],
+        group1: {
+            "THE SMART LITTLE TWILIGHT": {
+                url: "https://grhwmv.csb.app/",
+                students: ["SAMBATH NYVATHANAK", "DAM PICHPANHA", "SIM CHERMENG"]
+            },
+            "DARK VIBE": {
+                url: "https://3pml7d.csb.app/",
+                students: ["BIN PISALSAK", "MA SOPHEAANIKA", "CHEA SOKHOUR", "RITH RATANAK", "CHHOR HEANG NY"]
+            },
+            "WATERMELON": {
+                url: "https://ts3h2m.csb.app/",
+                students: ["HENG SOKKONG", "SOUR SOMBRATHNA", "ABDUL ROZANA"]
+            },
+            "HAWAII": {
+                url: "https://s4th6x.csb.app/",
+                students: ["CHANG VOTEY", "CHIV MENGCHING", "HAN SODAVIN"]
+            },
+            "PLAVE WIZARDS": {
+                url: "https://wz2gpj.csb.app/",
+                students: ["KHA MEY EI", "CHEA ALIYA"]
+            },
+            "3GIRLS": {
+                url: "https://rfv8km.csb.app/",
+                students: ["TOUCH THEARITH", "DOUNG SIVLORNG", "HOR HANNA", "SREY SOVANRATANY"]
+            },
+            "CHILL CREW": {
+                url: "https://2c2jyr.csb.app/",
+                students: ["THEA LYMEAN", "SORN SIMHONG", "THORN THOEUNDALIYA", "THIV ZOLY", "LY KIMSRUN"]
+            }
+        },
         group2: [
             { name: "SIM TEVENTH" },
             { name: "SETHVIN SONISA" },

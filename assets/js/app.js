@@ -303,6 +303,79 @@ function createComingSoonModal(studentName) {
     });
 }
 
+function createGroupModal(groupName, groupData) {
+    const modalOverlay = el('div', { className: 'modal-overlay', id: 'modalOverlay' });
+    
+    const modalContainer = el('div', { className: 'modal-container' });
+    
+    const modalHeader = el('div', { className: 'modal-header' });
+    const modalTitle = el('h2', { className: 'modal-title', textContent: `${groupName} Project` });
+    const modalClose = el('button', { 
+        className: 'modal-close', 
+        textContent: '✕',
+        onclick: closeModal
+    });
+    
+    modalHeader.appendChild(modalTitle);
+    modalHeader.appendChild(modalClose);
+    
+    const modalContent = el('div', { className: 'modal-content' });
+    
+    // Group members section
+    const membersSection = el('div', { className: 'group-members-section' });
+    const membersTitle = el('h3', { 
+        className: 'group-members-title',
+        textContent: 'Group Members'
+    });
+    const membersList = el('div', { className: 'group-members-list' });
+    
+    groupData.students.forEach(studentName => {
+        const memberItem = el('div', { 
+            className: 'group-member-item',
+            textContent: studentName
+        });
+        membersList.appendChild(memberItem);
+    });
+    
+    membersSection.appendChild(membersTitle);
+    membersSection.appendChild(membersList);
+    
+    // Project iframe section
+    const projectSection = el('div', { className: 'group-project-section' });
+    const projectTitle = el('h3', { 
+        className: 'group-project-title',
+        textContent: 'Group Project'
+    });
+    const projectIframe = el('iframe', {
+        className: 'modal-iframe',
+        src: groupData.url,
+        title: `${groupName} Project`
+    });
+    
+    projectSection.appendChild(projectTitle);
+    projectSection.appendChild(projectIframe);
+    
+    modalContent.appendChild(membersSection);
+    modalContent.appendChild(projectSection);
+    modalContainer.appendChild(modalHeader);
+    modalContainer.appendChild(modalContent);
+    modalOverlay.appendChild(modalContainer);
+    
+    document.body.appendChild(modalOverlay);
+    
+    // Show modal with animation
+    setTimeout(() => {
+        modalOverlay.classList.add('show');
+    }, 10);
+    
+    // Close modal when clicking outside
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+}
+
 // Search functionality
 function createSearchInput(onSearch) {
     const searchContainer = el('div', { className: 'search-container' });
@@ -558,66 +631,104 @@ function renderGroup(projectNumber, groupNumber) {
     });
     const gallerySubtitle = el('p', { 
         className: 'gallery-subtitle', 
-        textContent: 'Click on a student card to view their project' 
+        textContent: projectNumber === 2 && groupNumber === 1 ? 'Click on a group to view their project' : 'Click on a student card to view their project'
     });
     
     galleryHeader.appendChild(galleryTitle);
     galleryHeader.appendChild(gallerySubtitle);
     
-    // Search functionality
-    const studentsData = Data[`project${projectNumber}`][`group${groupNumber}`];
-    console.log('Students data:', studentsData);
-    
-    let filteredStudents = studentsData;
-    const searchInput = createSearchInput((searchTerm) => {
-        filteredStudents = studentsData.filter(student =>
-            student.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        renderStudentGrid();
-    });
-    
-    // Student grid container
-    const studentGridContainer = el('div', { className: 'student-grid', id: 'studentGrid' });
-    
-    function renderStudentGrid() {
-        studentGridContainer.innerHTML = '';
+    // Check if this is Project 2 Group 1 (group-based structure)
+    if (projectNumber === 2 && groupNumber === 1) {
+        const groupsData = Data[`project${projectNumber}`][`group${groupNumber}`];
+        console.log('Groups data:', groupsData);
         
-        filteredStudents.forEach(student => {
-            const studentCard = el('div', { 
-                className: 'student-card',
+        // Group cards container
+        const groupCardsContainer = el('div', { className: 'student-grid', id: 'groupGrid' });
+        
+        Object.entries(groupsData).forEach(([groupName, groupData]) => {
+            const groupCard = el('div', { 
+                className: 'student-card group-card',
                 onclick: () => {
-                    if (student.url) {
-                        createModal(student);
-                    } else {
-                        createComingSoonModal(student.name);
-                    }
+                    createGroupModal(groupName, groupData);
                 }
             });
             
-            const studentName = el('h3', {
+            const groupNameEl = el('h3', {
                 className: 'student-name',
-                textContent: student.name
+                textContent: groupName
             });
             
-            const studentDescription = el('p', {
+            const groupDescription = el('p', {
                 className: 'student-description',
-                textContent: student.url ? 'Click to visit my page' : 'Project coming soon'
+                textContent: `Members: ${groupData.students.join(', ')}`
             });
             
-            studentCard.appendChild(studentName);
-            studentCard.appendChild(studentDescription);
+            groupCard.appendChild(groupNameEl);
+            groupCard.appendChild(groupDescription);
             
-            studentGridContainer.appendChild(studentCard);
+            groupCardsContainer.appendChild(groupCard);
         });
+        
+        gallery.appendChild(galleryHeader);
+        gallery.appendChild(groupCardsContainer);
+        app.appendChild(gallery);
+        
+    } else {
+        // Regular student-based structure for other groups
+        const studentsData = Data[`project${projectNumber}`][`group${groupNumber}`];
+        console.log('Students data:', studentsData);
+        
+        let filteredStudents = studentsData;
+        const searchInput = createSearchInput((searchTerm) => {
+            filteredStudents = studentsData.filter(student =>
+                student.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            renderStudentGrid();
+        });
+        
+        // Student grid container
+        const studentGridContainer = el('div', { className: 'student-grid', id: 'studentGrid' });
+        
+        function renderStudentGrid() {
+            studentGridContainer.innerHTML = '';
+            
+            filteredStudents.forEach(student => {
+                const studentCard = el('div', { 
+                    className: 'student-card',
+                    onclick: () => {
+                        if (student.url) {
+                            createModal(student);
+                        } else {
+                            createComingSoonModal(student.name);
+                        }
+                    }
+                });
+                
+                const studentName = el('h3', {
+                    className: 'student-name',
+                    textContent: student.name
+                });
+                
+                const studentDescription = el('p', {
+                    className: 'student-description',
+                    textContent: student.url ? 'Click to visit my page' : 'Project coming soon'
+                });
+                
+                studentCard.appendChild(studentName);
+                studentCard.appendChild(studentDescription);
+                
+                studentGridContainer.appendChild(studentCard);
+            });
+        }
+        
+        // Initial render
+        renderStudentGrid();
+        
+        gallery.appendChild(galleryHeader);
+        gallery.appendChild(searchInput);
+        gallery.appendChild(studentGridContainer);
+        app.appendChild(gallery);
     }
-    
-    // Initial render
-    renderStudentGrid();
-    
-    gallery.appendChild(galleryHeader);
-    gallery.appendChild(searchInput);
-    gallery.appendChild(studentGridContainer);
-    app.appendChild(gallery);
 }
 
 // Keyboard navigation support

@@ -1055,3 +1055,79 @@ body {
     }
 }
 
+/* Group Modal Styles */
+.group-card {
+    border: 2px solid #4a90e2;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+}
+
+.group-card:hover {
+    border-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.group-members-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+}
+
+.group-members-title {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.group-members-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.group-member-item {
+    background: #4a90e2;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.group-project-section {
+    margin-top: 20px;
+}
+
+.group-project-title {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.group-project-section .modal-iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for group modal */
+@media (max-width: 768px) {
+    .group-members-list {
+        flex-direction: column;
+    }
+    
+    .group-member-item {
+        text-align: center;
+    }
+    
+    .group-project-section .modal-iframe {
+        height: 400px;
+    }
+}
+
