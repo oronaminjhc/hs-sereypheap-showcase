@@ -415,6 +415,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 3rem 1rem;
+    background: transparent;
 }
 
 .group-card {
@@ -424,6 +425,7 @@ body {
     gap: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    background: transparent;
 }
 
 .group-card:hover {
