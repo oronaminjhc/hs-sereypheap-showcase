@@ -323,10 +323,6 @@ function createGroupModal(groupName, groupData) {
     
     // Project section
     const projectSection = el('div', { className: 'group-project-section' });
-    const projectTitle = el('h3', { 
-        className: 'group-project-title',
-        textContent: 'Group Project'
-    });
     
     if (groupData.url) {
         const projectIframe = el('iframe', {
@@ -334,7 +330,6 @@ function createGroupModal(groupName, groupData) {
             src: groupData.url,
             title: `${groupName} Project`
         });
-        projectSection.appendChild(projectTitle);
         projectSection.appendChild(projectIframe);
     } else {
         const comingSoonContent = el('div', { className: 'coming-soon-content' });
