@@ -1059,44 +1059,45 @@ body {
 
 /* Group Modal Styles */
 .group-card {
-    border: 2px solid #4a90e2;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+    border: 2px solid var(--school-green);
+    background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%);
 }
 
 .group-card:hover {
-    border-color: #357abd;
+    border-color: var(--school-light-green);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
 }
 
 .group-members-section {
     margin-bottom: 20px;
     padding: 15px;
-    background: #f8f9fa;
+    background: #f0f9f0;
     border-radius: 8px;
-    border-left: 4px solid #4a90e2;
+    border-left: 4px solid var(--school-green);
 }
 
 .group-members-title {
     margin: 0 0 10px 0;
-    color: #2c3e50;
+    color: var(--school-green);
     font-size: 1.1rem;
     font-weight: 600;
 }
 
 .group-members-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .group-member-item {
-    background: #4a90e2;
+    background: var(--school-green);
     color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 500;
+    text-align: left;
 }
 
 .group-project-section {
@@ -1105,7 +1106,7 @@ body {
 
 .group-project-title {
     margin: 0 0 15px 0;
-    color: #2c3e50;
+    color: var(--school-green);
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -1120,12 +1121,8 @@ body {
 
 /* Responsive adjustments for group modal */
 @media (max-width: 768px) {
-    .group-members-list {
-        flex-direction: column;
-    }
-    
     .group-member-item {
-        text-align: center;
+        text-align: left;
     }
     
     .group-project-section .modal-iframe {
