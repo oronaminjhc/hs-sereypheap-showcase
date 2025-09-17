@@ -1,3 +1,8 @@
+/* CSS 적용 테스트 - 이 코드가 보이면 CSS가 정상 로드됨 */
+body {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+}
+
 /* === Modern polish patch (append at end) =============================== */
 :root {
     --ease-out: cubic-bezier(.2,.8,.2,1);
