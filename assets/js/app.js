@@ -681,9 +681,9 @@ function renderGroup(projectNumber, groupNumber) {
                 textContent: groupName
             });
             
-            const groupDescription = el('div', {
+            const groupDescription = el('p', {
                 className: 'student-description',
-                innerHTML: `Members:<br>${groupData.students.join('<br>')}`
+                textContent: `Members: ${groupData.students.join(', ')}`
             });
             
             groupCard.appendChild(groupNameEl);
