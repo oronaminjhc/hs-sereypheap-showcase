@@ -432,40 +432,30 @@ body {
     box-shadow: none !important;
 }
 
-/* 팀 카드 안쪽 요소들에만 hover 효과 적용 - 학생 카드와 동일한 디자인 */
-.group-card .student-name {
+/* 프로젝트2 그룹 카드 통합 스타일 - 학생 카드와 동일한 디자인 */
+.group-card-inner {
     background: #fff;
     color: var(--text);
-    padding: 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    margin-bottom: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
     border: 1px solid var(--border);
     box-shadow: 0 4px 16px var(--shadow);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-align: center;
 }
 
-.group-card .student-description {
-    background: #fff;
-    color: var(--muted);
-    padding: 0.8rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 16px var(--shadow);
-}
-
-.group-card:hover .student-name {
-    background: var(--school-green);
+.group-card-inner:hover {
+    background: linear-gradient(135deg, var(--school-green), var(--school-light-green));
     color: #fff;
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.3);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.4);
+    animation: hover-wiggle 0.4s ease forwards;
 }
 
-.group-card:hover .student-description {
-    background: var(--school-green);
+.group-card-inner:hover .student-name,
+.group-card-inner:hover .student-description {
     color: #fff;
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.3);
 }
 
 .group-button {

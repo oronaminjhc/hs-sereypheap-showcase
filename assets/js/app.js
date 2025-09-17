@@ -650,10 +650,14 @@ function renderGroup(projectNumber, groupNumber) {
         
         Object.entries(groupsData).forEach(([groupName, groupData]) => {
             const groupCard = el('div', { 
-                className: 'student-card group-card',
+                className: 'group-card',
                 onclick: () => {
                     createGroupModal(groupName, groupData);
                 }
+            });
+            
+            const groupCardInner = el('div', {
+                className: 'group-card-inner'
             });
             
             const groupNameEl = el('h3', {
@@ -666,8 +670,9 @@ function renderGroup(projectNumber, groupNumber) {
                 innerHTML: `Members:<br>${groupData.students.join('<br>')}`
             });
             
-            groupCard.appendChild(groupNameEl);
-            groupCard.appendChild(groupDescription);
+            groupCardInner.appendChild(groupNameEl);
+            groupCardInner.appendChild(groupDescription);
+            groupCard.appendChild(groupCardInner);
             
             groupCardsContainer.appendChild(groupCard);
         });
