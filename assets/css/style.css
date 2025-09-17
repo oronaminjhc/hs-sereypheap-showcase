@@ -426,24 +426,24 @@ body {
     gap: 1rem;
     cursor: pointer;
     transition: all 0.4s ease;
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
 }
 
 .group-card:hover {
-    background: linear-gradient(135deg, var(--school-green), var(--school-light-green)) !important;
-    color: #fff !important;
+    background: transparent !important;
+    color: inherit !important;
     transform: translateY(-6px) scale(1.03) !important;
-    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.4) !important;
+    box-shadow: none !important;
     animation: hover-wiggle 0.4s ease forwards !important;
 }
 
 .group-card:hover .student-name,
 .group-card:hover .student-description {
-    color: #fff !important;
+    color: inherit !important;
 }
 
 .group-button {
