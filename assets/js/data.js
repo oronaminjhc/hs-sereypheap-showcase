@@ -89,33 +89,33 @@ const Data = {
             }
         },
         group2: {
-            "WINNER": {
-                url: null,
-                students: ["ANJULYTA VANNSAK", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
-            },
-            "VIRTUAL LEARNERS": {
-                url: null,
-                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
-            },
-            "BABYMONSTER": {
-                url: null,
-                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
-            },
-            "IT ENTHUSIASTS": {
-                url: null,
-                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
-            },
             "DREAM CHASERS": {
-                url: null,
+                url: "https://ymchtm.csb.app/",
                 students: ["THONG SOKHEANG", "SATH SEREYMORAKATH", "CHAN SOKCHAN"]
             },
+            "VIRTUAL LEARNERS": {
+                url: "https://3vtc5s.csb.app/",
+                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
+            },
             "SECRETIVE PLOTTER": {
-                url: null,
+                url: "https://tdwyq9.csb.app/",
                 students: ["SAMAUN CHARIVATH", "KONG THEARAYUK", "ORN VINLIK"]
             },
+            "WINNER": {
+                url: "https://dwczzt.csb.app/",
+                students: ["ANJULYTA VANNSAK", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
+            },
+            "BABYMONSTER": {
+                url: "https://jw82m7.csb.app/",
+                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
+            },
             "THE EQUALITY": {
-                url: null,
+                url: "https://cjgts6.csb.app/",
                 students: ["LIM PHEALYKANNIKA", "SOM SREYMEY", "OEUN VIRAK", "CHIM PANHVUTH"]
+            },
+            "IT ENTHUSIASTS": {
+                url: "https://hct2t9.csb.app/",
+                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
             }
         }
     }
