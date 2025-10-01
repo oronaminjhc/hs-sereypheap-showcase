@@ -190,10 +190,13 @@ const routes = {
     "": renderHome,
     "#/project1": () => renderProject(1),
     "#/project2": () => renderProject(2),
+    "#/project3": () => renderProject(3),
     "#/project1/group1": () => renderGroup(1, 1),
     "#/project1/group2": () => renderGroup(1, 2),
     "#/project2/group1": () => renderGroup(2, 1),
-    "#/project2/group2": () => renderGroup(2, 2)
+    "#/project2/group2": () => renderGroup(2, 2),
+    "#/project3/group1": () => renderGroup(3, 1),
+    "#/project3/group2": () => renderGroup(3, 2)
 };
 
 // Modal functionality
@@ -625,18 +628,20 @@ function renderGroup(projectNumber, groupNumber) {
     const galleryHeader = el('div', { className: 'gallery-header' });
     const galleryTitle = el('h1', { 
         className: 'gallery-title', 
-        textContent: projectNumber === 1 ? 'My Self Introduction Page' : 'Hun Sen Serey Pheap High School Page'
+        textContent: projectNumber === 1 ? 'My Self Introduction Page' : 
+                   projectNumber === 2 ? 'Hun Sen Serey Pheap High School Page' : 
+                   'Camboida Idea Website'
     });
     const gallerySubtitle = el('p', { 
         className: 'gallery-subtitle', 
-        textContent: projectNumber === 2 && groupNumber === 1 ? 'Click on a group to view their project' : 'Click on a student card to view their project'
+        textContent: (projectNumber === 2 || projectNumber === 3) && groupNumber === 1 ? 'Click on a group to view their project' : 'Click on a student card to view their project'
     });
     
     galleryHeader.appendChild(galleryTitle);
     galleryHeader.appendChild(gallerySubtitle);
     
-    // Check if this is Project 2 (group-based structure)
-    if (projectNumber === 2) {
+    // Check if this is Project 2 or 3 (group-based structure)
+    if (projectNumber === 2 || projectNumber === 3) {
         const groupsData = Data[`project${projectNumber}`][`group${groupNumber}`];
         console.log('Groups data:', groupsData);
         

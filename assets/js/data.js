@@ -118,5 +118,67 @@ const Data = {
                 students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
             }
         }
+    },
+    project3: {
+        group1: {
+            "THE SMART LITTLE TWILIGHT": {
+                url: "https://rgd5ch.csb.app/",
+                students: ["THORN THOEUNDALIYA", "THEA LYMEAN", "SORN SIMHONG", "LY KIMSRUN"]
+            },
+            "DARK VIBE": {
+                url: "https://pczfsc.csb.app/",
+                students: ["MA SOPHEAANIKA", "CHEA SOKHOUR", "RITH RATANAK", "CHHOR HEANG NY"]
+            },
+            "WATERMELON": {
+                url: "https://33snth.csb.app/",
+                students: ["HENG SOKKONG", "SOUR SOMBRATHNA", "ABDUL ROZANA"]
+            },
+            "HAWAII": {
+                url: "https://llh9m6.csb.app/",
+                students: ["CHANG VOTEY", "CHIV MENGCHING", "HAN SODAVIN"]
+            },
+            "3GIRLS": {
+                url: "https://zlp3yt.csb.app/",
+                students: ["TOUCH THEARITH", "DOUNG SIVLORNG", "HOR HANNA", "SREY SOVANRATANY"]
+            },
+            "CHILL CREW": {
+                url: "https://pdh7lz.csb.app/",
+                students: ["THIV ZOLY", "BIN PISALSAK", "KHA MEY EI"]
+            },
+            "PLAVE WIZARDS": {
+                url: "https://5pg5x6.csb.app/",
+                students: ["CHEA ALIYA", "SAMBATH NYVATHANAK", "DAM PICHPANHA", "SIM CHERMENG"]
+            }
+        },
+        group2: {
+            "DREAM CHASERS": {
+                url: "https://ymchtm.csb.app/",
+                students: ["THONG SOKHEANG", "SATH SEREYMORAKATH", "CHAN SOKCHAN"]
+            },
+            "VIRTUAL LEARNERS": {
+                url: "https://3vtc5s.csb.app/",
+                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
+            },
+            "SECRETIVE PLOTTER": {
+                url: "https://tdwyq9.csb.app/",
+                students: ["SAMAUN CHARIVATH", "KONG THEARAYUK", "ORN VINLIK"]
+            },
+            "WINNER": {
+                url: "https://dwczzt.csb.app/",
+                students: ["ANJULYTA VANNSAK", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
+            },
+            "BABYMONSTER": {
+                url: "https://jw82m7.csb.app/",
+                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
+            },
+            "THE EQUALITY": {
+                url: "https://cjgts6.csb.app/",
+                students: ["LIM PHEALYKANNIKA", "SOM SREYMEY", "OEUN VIRAK", "CHIM PANHVUTH"]
+            },
+            "IT ENTHUSIASTS": {
+                url: "https://hct2t9.csb.app/",
+                students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
+            }
+        }
     }
 };
