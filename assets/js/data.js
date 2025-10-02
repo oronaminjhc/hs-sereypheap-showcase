@@ -151,32 +151,32 @@ const Data = {
             }
         },
         group2: {
-            "DREAM CHASERS": {
-                url: "https://ymchtm.csb.app/",
-                students: ["THONG SOKHEANG", "SATH SEREYMORAKATH", "CHAN SOKCHAN"]
-            },
-            "VIRTUAL LEARNERS": {
-                url: "https://3vtc5s.csb.app/",
-                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
-            },
-            "SECRETIVE PLOTTER": {
-                url: "https://tdwyq9.csb.app/",
-                students: ["SAMAUN CHARIVATH", "KONG THEARAYUK", "ORN VINLIK"]
-            },
             "WINNER": {
-                url: "https://dwczzt.csb.app/",
+                url: "https://h6nwfy.csb.app/",
                 students: ["ANJULYTA VANNSAK", "RITHY MONYNEATH", "CHAN SOVANNMONY"]
             },
-            "BABYMONSTER": {
-                url: "https://jw82m7.csb.app/",
-                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
-            },
             "THE EQUALITY": {
-                url: "https://cjgts6.csb.app/",
+                url: "https://tm2n7c.csb.app/",
                 students: ["LIM PHEALYKANNIKA", "SOM SREYMEY", "OEUN VIRAK", "CHIM PANHVUTH"]
             },
+            "DREAM CHASERS": {
+                url: "https://jyslsc.csb.app/",
+                students: ["THONG SOKHEANG", "SATH SEREYMORAKATH", "CHAN SOKCHAN"]
+            },
+            "SECRETIVE PLOTTER": {
+                url: "https://8x3q8l.csb.app/",
+                students: ["SAMAUN CHARIVATH", "KONG THEARAYUK", "ORN VINLIK"]
+            },
+            "VIRTUAL LEARNERS": {
+                url: "https://5xlprc.csb.app/",
+                students: ["CHEA FRANKLAMPHAT", "CHEAV SIVHOUTH", "VEASNA LITA", "SETHVIN SONISA"]
+            },
+            "BABYMONSTER": {
+                url: "https://27wqnw.csb.app/",
+                students: ["UCH SEREYDAVID", "MEY MEASOUDOM", "SIM TEVENTH", "KOSAL MENGHONG"]
+            },
             "IT ENTHUSIASTS": {
-                url: "https://hct2t9.csb.app/",
+                url: "https://d7d33g.csb.app/",
                 students: ["YA KHEMRIN", "MAO MONYRATANAK", "THAT RIYO", "RUN KESARKOLE"]
             }
         }
